@@ -5,10 +5,12 @@
 
 SERVER_IP=${1:-127.0.0.1}
 SERVER_PORT=${2:-5050}
+THREAD_COUNT=${3:-200}
 
 echo "=== Starting TCP Character Counter Server ==="
 echo "Server IP: $SERVER_IP"
 echo "Server Port: $SERVER_PORT"
+echo "Thread Count: $THREAD_COUNT"
 echo "Press Ctrl+C to stop the server"
 echo ""
 
@@ -19,4 +21,4 @@ if [ ! -f "build/server/server_app" ]; then
 fi
 
 # Start the server
-./build/server/server_app $SERVER_IP $SERVER_PORT
+./build/server/server_app $SERVER_IP $SERVER_PORT $THREAD_COUNT
